@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { blogPosts, categories } from '../data/blogPosts';
-import { FaDog, FaCat, FaBird, FaRabbit, FaHeartbeat, FaTree } from 'react-icons/fa';
+import { FaDog, FaCat, FaRabbit, FaHeartbeat, FaTree } from 'react-icons/fa';
 
 const Blog = () => {
   const [selectedCategory, setSelectedCategory] = useState('All Posts');
