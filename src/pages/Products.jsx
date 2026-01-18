@@ -3,7 +3,7 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import ProductCard from '../components/ProductCard';
 import { products, categories, brands } from '../data/products';
-import { FaSearch, FaFilter, FaTh, FaListUl, FaShoppingCart, FaStar, FaRegStar } from 'react-icons/fa';
+import { FaSearch, FaFilter, FaTh, FaListUl, FaShoppingCart, FaStar, FaRegStar, FaPaw, FaDog, FaCat, FaFeather } from 'react-icons/fa';
 
 const Products = () => {
   const [cartItems, setCartItems] = useState([]);
@@ -101,19 +101,31 @@ const Products = () => {
               <div className="mb-6">
                 <h3 className="font-semibold text-gray-700 mb-3">Categories</h3>
                 <div className="space-y-2">
-                  {categories.map((category) => (
-                    <label key={category.id} className="flex items-center">
-                      <input
-                        type="radio"
-                        name="category"
-                        checked={selectedCategory === category.id}
-                        onChange={() => setSelectedCategory(category.id)}
-                        className="mr-2 text-emerald-600"
-                      />
-                      <span className="mr-2">{category.icon}</span>
-                      <span className="text-gray-700">{category.name}</span>
-                    </label>
-                  ))}
+                  {categories.map((category) => {
+                    const getIcon = () => {
+                      switch(category.iconType) {
+                        case 'dog': return <FaDog className="text-lg text-emerald-600" />;
+                        case 'cat': return <FaCat className="text-lg text-emerald-600" />;
+                        case 'feather': return <FaFeather className="text-lg text-emerald-600" />;
+                        case 'paw': return <FaPaw className="text-lg text-emerald-600" />;
+                        default: return <FaPaw className="text-lg text-emerald-600" />;
+                      }
+                    };
+                    
+                    return (
+                      <label key={category.id} className="flex items-center">
+                        <input
+                          type="radio"
+                          name="category"
+                          checked={selectedCategory === category.id}
+                          onChange={() => setSelectedCategory(category.id)}
+                          className="mr-2 text-emerald-600"
+                        />
+                        <span className="mr-2 flex items-center">{getIcon()}</span>
+                        <span className="text-gray-700">{category.name}</span>
+                      </label>
+                    );
+                  })}
                 </div>
               </div>
 

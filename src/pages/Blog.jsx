@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { blogPosts, categories } from '../data/blogPosts';
-import { FaDog, FaCat, FaRabbit, FaHeartbeat, FaTree } from 'react-icons/fa';
+import { FaDog, FaCat, FaFeather, FaPaw, FaHeartbeat, FaTree } from 'react-icons/fa';
 
 const Blog = () => {
   const [selectedCategory, setSelectedCategory] = useState('All Posts');
@@ -216,8 +216,8 @@ const Blog = () => {
               const getIcon = () => {
                 if (category.includes('Dog')) return <FaDog className="text-2xl text-emerald-500" />;
                 if (category.includes('Cat')) return <FaCat className="text-2xl text-emerald-500" />;
-                if (category.includes('Bird')) return <FaBird className="text-2xl text-emerald-500" />;
-                if (category.includes('Small')) return <FaRabbit className="text-2xl text-emerald-500" />;
+                if (category.includes('Bird')) return <FaFeather className="text-2xl text-emerald-500" />;
+                if (category.includes('Small')) return <FaPaw className="text-2xl text-emerald-500" />;
                 if (category.includes('Health')) return <FaHeartbeat className="text-2xl text-emerald-500" />;
                 return <FaTree className="text-2xl text-emerald-500" />;
               };

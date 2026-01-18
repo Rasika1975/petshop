@@ -86,11 +86,11 @@ export const products = [
 ];
 
 export const categories = [
-  { id: "all", name: "All Products", icon: "🐾" },
-  { id: "dog", name: "Dog Supplies", icon: "🐶" },
-  { id: "cat", name: "Cat Essentials", icon: "🐱" },
-  { id: "bird", name: "Bird Care", icon: "🐦" },
-  { id: "small-pet", name: "Small Pets", icon: "🐰" }
+  { id: "all", name: "All Products", iconType: "paw" },
+  { id: "dog", name: "Dog Supplies", iconType: "dog" },
+  { id: "cat", name: "Cat Essentials", iconType: "cat" },
+  { id: "bird", name: "Bird Care", iconType: "feather" },
+  { id: "small-pet", name: "Small Pets", iconType: "paw" }
 ];
 
 export const brands = [
